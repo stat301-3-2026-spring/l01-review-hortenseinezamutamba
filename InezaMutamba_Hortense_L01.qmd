@@ -1,8 +1,8 @@
 ---
 title: "L01 Review"
 subtitle: "Data Science 3 with R (STAT 301-3)"
-author: "YOUR NAME"
-pagetitle: "L01 YOUR NAME"
+author: "Hortense Ineza Mutamba"
+pagetitle: "L01 Hortense Ineza Mutamba"
 date: today
 
 format:
@@ -26,9 +26,8 @@ citation-location: margin
 ::: {.callout-tip icon="false"}
 ## Github Repo Link
 
-To link to your github **repo**sitory, appropriately edit the example link below. Meaning replace `https://your-github-repo-url` with your github repo url. Suggest verifying the link works before submitting.
+[Hortense's Github Link](https://github.com/stat301-3-2026-spring/l01-review-hortenseinezamutamba)
 
-[https://your-github-repo-url](https://your-github-repo-url)
 :::
 
 ## Overview
@@ -46,7 +45,15 @@ Provide a brief outline/overview of the steps involved in a supervised machine l
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+* **Define the problem** : identify the prediction objective and whether it is regression or classification.
+* **Collect and explore data** : inspect for missingness, class imbalance, and distribution of target variable and other potential variables.
+* **Split the data** : divide into training and test sets (stratified by outcome if needed)
+* **Feature engineering** : develop recipes to preprocess and transform predictors
+* **Select and specify models** : choose model types relevant to use and define hyperparameters to tune.
+* **Resample and tune** : use cross-validation to estimate performance and find optimal hyperparameters.
+* **Compare and select** — evaluate all workflows using a primary metric and select the best model
+* **Fit final model** — train winning model on full training set
+* **Evaluate on test set** — assess final model performance on held-out data
 
 :::
 
@@ -57,7 +64,9 @@ Explain the difference between supervised and unsupervised learning.
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+For **supervised learning**, the model is trained on labeled data. This means that each observation has *a known outcome variable* that the model learns to predict. Examples include regression and classification problems.
+
+For **unsupervised learning**, there is *no outcome variable*. The model instead finds patterns, structure, or groupings within the data on its own. Examples include clustering and dimensionality reduction.
 
 :::
 
@@ -70,7 +79,8 @@ In general, we can classify a model by its purpose into 1 of the 3 categories be
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Descriptive models aim to summarize or represent patterns in data in a way that is easy to understand. The goal is not prediction or inference but rather *to describe what the data looks like*. Example: using a trend line on a scatterplot to visualize a relationship.
+
 
 :::
 
@@ -79,7 +89,8 @@ YOUR SOLUTION HERE
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Inferential models aim to test hypotheses and understand the relationship between predictors and the outcome. The goal is *to make conclusions about the population and determine which variables have statistically significant effects*. Example: determining whether a drug treatment significantly reduces blood pressure.
+
 
 :::
 
@@ -88,7 +99,8 @@ YOUR SOLUTION HERE
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Predictive models aim to *produce accurate predictions of the outcome variable for new, unseen observations*. The focus is on minimizing prediction error rather than interpreting relationships. Example: predicting house prices based on features like size and location.
+
 
 :::
 
