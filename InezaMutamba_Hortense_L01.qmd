@@ -150,7 +150,7 @@ In general, is a mechanistic or empirically driven model easier to interpret? Ex
 ::: {.callout-tip icon="false"}
 ## Solution
 
-I would say that mechanistic models are generally easier to interpret because their assumed structure is explicit and fixed. For example, in linear regression, coefficients have a direct interpretation as the change in outcome per unit change in a predictor. Empirically driven models are often "black boxes" that are harder to interpret despite being more flexible since they are not fixed or follow a certain direct pattern.
+Mechanistic models are generally easier to interpret because their assumed structure is explicit and fixed. For example, in linear regression, coefficients have a direct interpretation as the change in outcome per unit change in a predictor. Empirically driven models are often "black boxes" that are harder to interpret despite being more flexible since they are not fixed or follow a certain direct pattern.
 
 :::
 
@@ -177,7 +177,7 @@ Describe the bias-variance trade-off when considering the use of a mechanistic o
 
 Mechanistic models tend to have **higher bias and lower variance** : their rigid structure may oversimplify the true relationship (bias) but produces stable predictions across different datasets (low variance). On other hand, Empirically driven models tend to have **lower bias and higher variance** since they can capture complex patterns (low bias) but may overfit to noise in the training data (high variance). 
 
-This is the bias-variance trade-off: increasing flexibility reduces bias but increases variance (blessing in a disguise).
+This is the bias-variance trade-off: increasing flexibility reduces bias but increases variance.
 
 :::
 
