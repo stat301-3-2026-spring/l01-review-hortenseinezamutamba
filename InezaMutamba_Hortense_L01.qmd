@@ -99,7 +99,7 @@ Inferential models aim to test hypotheses and understand the relationship betwee
 ::: {.callout-tip icon="false"}
 ## Solution
 
-Predictive models aim to *produce accurate predictions of the outcome variable for new, unseen observations*. The focus is on minimizing prediction error rather than interpreting relationships. Example: predicting house prices based on features like size and location.
+Predictive models aim to *produce accurate predictions of the outcome variable for new, unseen observations*. The focus is on minimizing prediction error rather than interpreting relationships. Example: predicting house prices based on features like size and location. 
 
 
 :::
@@ -115,7 +115,8 @@ What does it mean to be a mechanistic model?
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+A mechanistic model *assumes a specific functional form or mathematical structure for the relationship* between predictors and the outcome. The model is built from theory or prior knowledge rather than the data itself. 
+For instance: linear regression assumes a linear relationship.
 
 :::
 
@@ -126,7 +127,8 @@ What does it mean to be an empirically driven model?
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+An empirically driven model makes no strong assumptions about the functional form of the relationship. Instead, *it learns patterns directly from the data*. Example: random forests and neural networks adapt their structure based on the training data.
+
 
 :::
 
@@ -137,7 +139,7 @@ How does the mechanistic and empirically driven model terminology relate to the 
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Mechanistic models are closely related to **parametric** models because both assume a fixed structure with a set number of parameters to estimate. Empirically driven models are closely related to **nonparametric** models because both allow the structure to be flexible and determined by the data rather than fixed in advance.
 
 :::
 
@@ -148,7 +150,7 @@ In general, is a mechanistic or empirically driven model easier to interpret? Ex
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+I would say that mechanistic models are generally easier to interpret because their assumed structure is explicit and fixed. For example, in linear regression, coefficients have a direct interpretation as the change in outcome per unit change in a predictor. Empirically driven models are often "black boxes" that are harder to interpret despite being more flexible since they are not fixed or follow a certain direct pattern.
 
 :::
 
@@ -159,7 +161,10 @@ How does mechanistic and empirically driven model terminology relate to the idea
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Empirically driven models are generally **more flexible** than mechanistic models. Since they do not assume a fixed functional form, they can adapt to complex, non-linear patterns in the data. 
+
+Mechanistic models are **less flexible** because their structure is constrained by the assumed form.
+
 
 :::
 
@@ -170,7 +175,9 @@ Describe the bias-variance trade-off when considering the use of a mechanistic o
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Mechanistic models tend to have **higher bias and lower variance** : their rigid structure may oversimplify the true relationship (bias) but produces stable predictions across different datasets (low variance). On other hand, Empirically driven models tend to have **lower bias and higher variance** since they can capture complex patterns (low bias) but may overfit to noise in the training data (high variance). 
+
+This is the bias-variance trade-off: increasing flexibility reduces bias but increases variance (blessing in a disguise).
 
 :::
 
@@ -181,8 +188,9 @@ Explain the difference between a regression and classification machine learning 
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+A **regression** problem, the outcome variable is continuous and numeric. The goal is to predict a quantity. Example: predicting a house price or a popularity score.
 
+A **classification** problem, the outcome variable is categorical. The goal is to predict which class or group an observation belongs to. Example: predicting whether an email is spam or not spam, or whether a patient has a disease.
 :::
 
 ### Question 6 
@@ -192,7 +200,8 @@ When splitting the data, why is it useful to stratify by the outcome/target vari
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Stratifying by the outcome variable ensures that both the training and test sets have similar distributions of the target variable. Without stratification, random chance could result in one set having very different outcome distributions than the other, leading to biased model evaluation. This is especially important when the outcome is skewed or when dealing with class imbalance in classification problems.
+
 
 :::
 
@@ -203,7 +212,9 @@ Briefly describe how v-fold cross validation with repeats is used to estimate te
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+In v-fold cross-validation, the training data is randomly divided into v equal-sized folds depending on what is set. The model is trained on v-1 folds and evaluated on the remaining fold. This process repeats v times, with each fold serving as the evaluation set once. The test RMSE is estimated by *averaging* the RMSE across all v folds. With repeats, the entire process is repeated multiple times with different random splits, and results are averaged across all repeats to reduce variance in the estimate.
+
+We use cross-validation because it provides a more reliable estimate of test performance than a single train/validation split, makes better use of limited data, and helps identify over-fitting without touching the held-out test set.
 
 :::
 
@@ -214,7 +225,8 @@ When might we use a bootstrap resampling procedure instead of v-fold cross valid
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Bootstrap re-sampling would be preferred over v-fold cross-validation when the dataset is very small. In bootstrap re-sampling, observations are sampled with replacement to create multiple training sets of the same size as the original, with the out-of-bag observations used for evaluation. This approach is useful when there are too few observations to create stable folds, as it maximizes the use of available data.
+
 
 :::
 
@@ -225,7 +237,8 @@ Briefly describe model tuning and why we use it.
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Model tuning is the process of finding the optimal values for hyper-parameters : model settings that are not learned from the data but must be specified before training. We use tuning because different hyper-parameter values can lead to very different model performance, and there is no way to know the best values in advance. By searching over a grid of possible values using cross-validation, we can identify the combination that minimizes prediction error on unseen data and this is useful when we need to evaluate the performances of the models and from tuning we can choose best out of multiple made.
+
 
 :::
 
@@ -236,7 +249,9 @@ What are two common performance metrics when dealing with a regression ML proble
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Two common performance metrics for regression problems are:
+1. **RMSE (Root Mean Squared Error)**. This measures the average magnitude of prediction errors in the same units as the outcome variable.
+2. **R² (Coefficient of Determination)**. This measures the proportion of variance in the outcome explained by the model.
 
 :::
 
@@ -245,7 +260,9 @@ What are two common performance metrics when dealing with a classification ML pr
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Two common performance metrics for classification problems are:
+1. **Accuracy** : proportion of correctly classified observations.
+2. **ROC-AUC (Area Under the ROC Curve)** : measures the model's ability to distinguish between classes across all possible classification thresholds.
 
 :::
 
@@ -260,7 +277,7 @@ A company with a subscription based service (for example Netflix, Disney+, New Y
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+**Inferential.** The company wants to understand whether a specific variable (number of service calls) has a significant impact on churn. The focus is on the relationship between a predictor and the outcome, which is the goal of inferential modeling.
 
 :::
 
@@ -269,7 +286,7 @@ YOUR SOLUTION HERE
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+**Prediction.** The company wants to estimate the probability that a specific customer will churn next month. The focus is on producing an accurate prediction for individual customers, which is the goal of predictive modeling.
 
 :::
 
